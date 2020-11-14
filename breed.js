@@ -11,7 +11,7 @@ function getDogImage(query, display){
           // DISPLAY ERRORS if the server connection works but the json data is broken
           throw new Error(response.statusText);
       })
-      .then(responseJson => dogSearchData(responseJson))
+      .then(responseJson => displaySearchData(responseJson))
 
   // Step 2d - failure scenario  (DISPLAY ERRORS if the server connection fails)
   .catch(err => {
@@ -19,23 +19,20 @@ function getDogImage(query, display){
   });
   }
   
-  function displayResults(responseJson){
-    return`
-    <div>
-      <br>
-      <img src="${responseJson}" class="results-img">
-    </div>
-    `
-  }
-  
-  function dogSearchData(data){
-    console.log(data);
-    let results = data.message.map((item, index)=>displayResults(item));
-    $('.js-results').html(results);
-    console.log('results pin');
-  
-    $('.results').removeClass('hidden');
-  }
+  function displaySearchData(responseJson) {
+
+    //Step 3a - console.log the results
+    console.log(responseJson);
+
+    //Step 3b - create an HTML results variable
+    let htmlOutput = `<div><img src='${responseJson.message}' alt='Dog image'/></div>`;
+
+    //Step 3c - send the content of HTML results variable to the HTML - display them in the html page
+    $('.js-results').html(htmlOutput);
+
+    // Step 3d - remove class hidden from the result container
+    $('.js-results').removeClass("hidden");
+}
   
   function listenToInput(){
     $('.js-search-form').submit(event => {
