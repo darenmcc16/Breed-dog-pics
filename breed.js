@@ -1,5 +1,5 @@
 function getDogImage(query){
-  let url = `https://dog.ceo/api/breed/${query}/images/random/`
+  let url = `https://dog.ceo/api/breed/${query}/images/random`
   console.log(url)
   fetch(url)
 
@@ -49,6 +49,5 @@ function getDogImage(query){
     listenToInput();
   });
 
-  $(listenToInput);
 
 
