@@ -49,13 +49,6 @@ function getDogImage(query){
     listenToInput();
   });
 
+  $(listenToInput);
 
-// let feedback = ['We found that breed!', "Sorry we don't know that breed."]
 
-//   function givePositiveFeedback (){
-//       $('.results').text(feedback[0]);
-//   }
-
-//   function giveNegativeFeedback (){
-//       $('.results').text(feedback[1]);
-//   }
