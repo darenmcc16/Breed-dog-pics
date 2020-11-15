@@ -1,4 +1,4 @@
-function getDogImage(query, display){
+function getDogImage(query){
   let url = `https://dog.ceo/api/breed/${query}/images/random/`
   console.log(url)
   fetch(url)
@@ -40,7 +40,7 @@ function getDogImage(query, display){
       let queryTarget = $(event.currentTarget).find('.js-query');
       let query = queryTarget.val();
       console.log(query);
-      getDogImage(query, dogSearchData);
+      getDogImage(query);
     });
   }
   
